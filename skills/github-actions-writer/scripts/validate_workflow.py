@@ -48,10 +48,13 @@ class WorkflowValidator:
         self.check_jobs(workflow)
         self.check_best_practices(workflow)
 
+        # Save error state before print_results clears the list
+        has_errors = len(self.errors) > 0
+
         # Print results
         self.print_results()
 
-        return len(self.errors) == 0
+        return not has_errors
 
     def check_required_fields(self, workflow: Dict):
         """Check for required workflow fields."""

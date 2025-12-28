@@ -52,10 +52,8 @@ class SecurityAuditor:
         self.check_command_injection(workflow)
         self.check_self_hosted_runners(workflow)
 
-        # Print results
-        self.print_results()
-
-        return self.get_summary()
+        # Print results and return summary (print_results clears lists after computing summary)
+        return self.print_results()
 
     def check_permissions(self, workflow: Dict):
         """Check for overly permissive configurations."""
