@@ -29,6 +29,7 @@ but it has some templates and best practices.
 
 - Python 3.9+
 - gh CLI
+- PyYAML (for workflow validation scripts)
 
 ## Setup
 
