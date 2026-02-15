@@ -1,6 +1,6 @@
 # Version Control
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Version](https://img.shields.io/badge/version-1.2.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Python](https://img.shields.io/badge/python-3.9+-yellow)
 
@@ -19,6 +19,7 @@ A Claude Code plugin for Git operations and GitHub CLI workflows.
 ## Table of Contents
 
 - [Features](#features)
+- [Commands](#commands)
 - [Agents](#agents)
 - [Skills](#skills)
 - [Usage Examples](#usage-examples)
@@ -29,6 +30,9 @@ A Claude Code plugin for Git operations and GitHub CLI workflows.
 
 ## Features
 
+- **1 Command** for quick workflows:
+  - `/push` - Push branch to remote and create a pull request
+
 - **2 Agents** for task delegation:
   - `git-ops` - Lightweight Git operations (Haiku model)
   - `github-cli` - Full GitHub CLI workflows (Sonnet model)
@@ -36,6 +40,26 @@ A Claude Code plugin for Git operations and GitHub CLI workflows.
 - **2 Skills** for specialized capabilities:
   - `gh-cli` - Code search, workflow debugging, Pages deployment
   - `github-actions-writer` - CI/CD workflow generation with templates
+
+## Commands
+
+### /push
+
+Push the current branch to remote and create a pull request with title and body derived from commit messages.
+
+```bash
+# Push and create PR against main (default)
+/push
+
+# Push and create PR against a specific base branch
+/push develop
+```
+
+**Pre-flight checks:**
+- Blocks if on `main`/`master`
+- Warns on uncommitted changes
+- Stops if no commits ahead of base branch
+- Shows existing PR URL if one already exists
 
 ## Agents
 

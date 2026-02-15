@@ -4,7 +4,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Claude Code plugin (v1.0.0) providing Git operations and GitHub CLI workflows through:
+Claude Code plugin (v1.2.0) providing Git operations and GitHub CLI workflows through:
+- **1 Command**: push (push branch to remote and create a PR)
 - **2 Agents**: git-ops (Haiku, lightweight Git commands) and github-cli (Sonnet, GitHub CLI operations)
 - **2 Skills**: gh-cli (GitHub CLI utilities) and github-actions-writer (CI/CD workflow generation)
 
@@ -44,6 +45,8 @@ python3 skills/github-actions-writer/scripts/security_audit.py .github/workflows
 ```
 version-control/
 ├── .claude-plugin/plugin.json    # Plugin manifest
+├── commands/
+│   └── push.md                   # Push branch + create PR
 ├── agents/
 │   ├── git-ops.md                # Git operations (Haiku model)
 │   └── github-cli.md             # GitHub CLI operations (Sonnet model)
